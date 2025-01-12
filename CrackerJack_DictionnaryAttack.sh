@@ -56,7 +56,7 @@ echo -------------------------===== Start of bash ====-------------------------
 	loop=0
 	maxloop=99999999999999
 	passfind=0
-	sleep=0.2
+	sleep=0.1
 	alreadyselected=0
 
 part=$((part+1))
@@ -174,7 +174,6 @@ while read random
 	do 
 	echo
 	echo Loop code : $loop TestPassword : $random
-	sleep $sleep	## needed to give time to close/reset
 	if [ -f /dev/shm/passfound.txt ]; then
 		passfind=1
 		fi
@@ -188,14 +187,11 @@ while read random
 		echo
 		break
 		fi
+	sleep $sleep	## needed to give time to close/reset
 	7z t $file -bb3 -bse1 -p$random
-	####### junk
-	####### junk
-	####### junk
-	####### junk
-	####### junk
+
 	if [ "$?" -eq 0 ]; then
-		printf '\033[8;9;80t'		# will resize the window.
+		printf '\033[8;10;80t'		# will resize the window.
 		echo
 		echo "${green}███████████ PASSWORD FOUND ███████████${reset}"
 		echo
@@ -208,7 +204,8 @@ while read random
 		echo "	Current time : $now"
 		echo
 		echo $random >> /dev/shm/passfound.txt
-		read -n 1 -s -r -p "Press any key to CONTINUE"
+		read -n 1 -s -r -p "Press any key to QUIT"
+		echo
 		rm "/dev/shm/crackerjackfile.txt" 2> /dev/null
 		rm "/dev/shm/passfound.txt" 2> /dev/null
 		echo
@@ -220,7 +217,7 @@ done < "$dict"
 part=$((part+1))
 echo "-------------------------===== Section $part =====-------------------------"
 echo "Software lead out."
-	printf '\033[8;13;105t'		# will resize the window, 96 is minimum for exit box.
+	printf '\033[8;22;100t'		# will resize the window, 96 is minimum for exit box.
 	echo
 	echo "Debug data : debug=$debug error=$error part=$part noquit=$noquit random=$random random2=$random2 primeerror=$primeerror"
 	echo

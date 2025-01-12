@@ -139,28 +139,14 @@ echo -------------------------========================-------------------------
 echo -------------------------========================-------------------------	
 
 	functionrandom () {
-		options=("0" "1" "2" "3" "4" "5" "6" "7" "8" "9" \
-		"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" \
-		"A" "B" "C" "D" "F" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" )
+		options=("0" "1" "2" "3" "4" "5" "6" "7" "8" "9")
 		random_index=$(( RANDOM % ${#options[@]} ))
 		random1=${options[$random_index]}
 		random_index=$(( RANDOM % ${#options[@]} ))
 		random2=${options[$random_index]}
 		random_index=$(( RANDOM % ${#options[@]} ))
 		random3=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random4=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random5=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random5=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random6=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random7=${options[$random_index]}
-		random_index=$(( RANDOM % ${#options[@]} ))
-		random8=${options[$random_index]}
-		randomfinal=$random1$random2$random3$random4$random5$random6$random7$random8
+		randomfinal=$random1$random2$random3
 		}
 
 ##-------------------------=========== SEPARATOR =============-------------------------
@@ -235,7 +221,7 @@ done
 part=$((part+1))
 echo "-------------------------===== Section $part =====-------------------------"
 echo "Software lead out."
-	printf '\033[8;30;100t'		# will resize the window, 96 is minimum for exit box.
+	printf '\033[8;22;100t'		# will resize the window, 96 is minimum for exit box.
 	echo
 	echo "Debug data : debug=$debug error=$error part=$part noquit=$noquit random=$random random2=$random2 primeerror=$primeerror"
 	echo

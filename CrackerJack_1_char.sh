@@ -78,7 +78,7 @@ echo "Select a password protected 7z using dialog !"
 		then
 			echo "You don't have selected a file, now exit in 3 seconds."
 			echo -------------------------========================-------------------------
-			read -n 1 -s -r -p "Press ENTER key to QUIT !"
+			sleep 3
 			echo
 			exit
 		else
@@ -163,9 +163,6 @@ echo -------------------------========================-------------------------
 	echo "Start bruteforce in 3 sec..."
 	sleep 3
 	echo
-	
-	## 
-	## 62 * 62 *62 *62 *62 = 916132832
 
 ##-------------------------=========== SEPARATOR =============-------------------------
 
@@ -194,7 +191,7 @@ while [ "$loop1" -le "$maxloop1" ]
 	7z t $file -bb3 -bse1 -p$randomfinal
 
 	if [ "$?" -eq 0 ]; then
-		printf '\033[8;9;80t'		# will resize the window.
+		printf '\033[8;10;80t'		# will resize the window.
 		echo
 		echo "${green}███████████ PASSWORD FOUND ███████████${reset}"
 		echo
@@ -208,6 +205,7 @@ while [ "$loop1" -le "$maxloop1" ]
 		echo
 		echo $randomfinal >> /dev/shm/passfound.txt
 		read -n 1 -s -r -p "TRY PASSWORD and press any key to QUIT"
+		echo
 		rm "/dev/shm/crackerjackfile.txt" 2> /dev/null
 		rm "/dev/shm/passfound.txt" 2> /dev/null
 		echo
@@ -219,7 +217,7 @@ done
 part=$((part+1))
 echo "-------------------------===== Section $part =====-------------------------"
 echo "Software lead out."
-	printf '\033[8;30;100t'		# will resize the window, 96 is minimum for exit box.
+	printf '\033[8;22;100t'		# will resize the window, 96 is minimum for exit box.
 	echo
 	echo "Debug data : debug=$debug error=$error part=$part noquit=$noquit random=$random random2=$random2 primeerror=$primeerror"
 	echo
