@@ -55,7 +55,7 @@ echo -------------------------===== Start of bash ====-------------------------
 	loop=0
 	maxloop=99999999999999
 	passfind=0
-	sleep=0.1
+	sleep=0.2
 	loop1=0
 	maxloop1=5
 	alreadyselected=0
@@ -141,7 +141,8 @@ echo -------------------------========================-------------------------
 	functionrandom () {
 		options=("0" "1" "2" "3" "4" "5" "6" "7" "8" "9" \
 		"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" \
-		"A" "B" "C" "D" "F" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" )
+		"A" "B" "C" "D" "F" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" \
+		'|' '!' '/' '$' '%' '?' '&' '*' '(' ')' '_' '+' '-' '=' '^' '<' '>' ':' ';' '.' ',' '\' '±' )
 		random_index=$(( RANDOM % ${#options[@]} ))
 		random1=${options[$random_index]}
 		randomfinal=$random1

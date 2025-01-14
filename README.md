@@ -1,5 +1,3 @@
-# CrackerJack
-
 
 CrackerJack the easiest way to bruteforce a 7z protected file.
 --------------------------------------------------------------------
@@ -9,7 +7,9 @@ CrackerJack the easiest way to bruteforce a 7z protected file.
 
 Recovery password for YOUR files.
 
-When you have forgotten a password for your archives, do not try to crack/bruteforce files that do not belong to you.
+When you have forgotten the password for your archives.
+
+Do not try to crack/bruteforce files that do not belong to you.
 
 Brute force attacks on 7z files involve systematically attempting every possible password combination to unlock encrypted archives created with the 7-Zip file compression software. Given that 7z files can be secured with strong encryption algorithms, such as AES-256, the complexity of the password significantly impacts the time required for a successful brute force attack.
 
@@ -26,18 +26,24 @@ Char in CrackerJack_X_char.sh represent the number of letters or numbers in the 
 How to
 --------------------------------------------------------------------
 
+* Try to bruteforce one exemple included 7z in the first place.
+
+
 * Put all files in the same folder.
 
 * Start each CrackerJack_X_char.sh (Yes 1 to 10)
 	If you want with a dictionnary attack in the same time.
+	Start many instances of all CrackerJack_(1 to 10)_char.sh
 	Use dictionnary if you think the password is more than 10 char.
+	Start many instances of different dictionnary.
 
 * Start multiples instances of each CrackerJack_X_char.sh (Auto select 7z file when you already selected an 7z file)
-	Same for dictionnary.
+	Auto select 7z file for dictionnary too.
 
 * Wait for your password.
 
-* When the password if found the software AUTOMATICLY stop all instances and show the password.
+* When the password if found the software AUTOMATICALLY stop all instances and show the password.
+	Password is shown in ALL instances.
 
 
 Exemples files
@@ -45,9 +51,8 @@ Exemples files
 
 * Start CrackerJack_1_char.sh with passwordis5.7z and wait.
 
-* Try to bruteforce one included 7z in the first place.
-
-* Expect password would be find under 5 minute.
+* Expect password would be find under 1 minute.
+	With one instance.
 
 * Try others 7z files too !
 	passwordis5.7z
@@ -74,9 +79,13 @@ Files and use
 
 	Expect a pass found under 30 seconds.
 
+-CrackerJack_(1 to 10)_char.sh
+
+	Password lenght 1 to 10 characters.
+
 -EraseTempFiles.sh
 
-	To erase all temp files and password find.
+	To erase all TEMPORARY files and password find.
 	Do this if you want to find another password.
 	Theses files are also erased if a password is found.
 
